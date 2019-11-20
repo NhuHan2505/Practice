@@ -7,30 +7,32 @@
 using namespace std;
 string name1 = "";
 string name2 = "";
-bool draw;
-int row, column, player, choice, choose;
-char square[3][3] = { {'11','12','13'},{ '21','22','23' },{'31','32','33'} };
+bool draw = false;
+int row, column, choice, choose;
+int player = 1;
+char square[3][3] = { {'11','12','13'}, { '21','22','23' },{'31','32','33'} };
 
 bool gameOver() 
 {
-	//check win for row and column
-	for (int i = 0; i < 3; i++)
-	{
-		if (square[i][0] == square[i][1] && square[i][1] == square[i][2] ||
-			square[0][i] == square[1][i] && square[1][i] == square[2][i])
+	//checking the win for Rows and Column
+	for (int i = 0; i<3; i++)
+		if (square[i][0] == square[i][1] && square[i][0] == square[i][2] || 
+			square[0][i] == square[1][i] && square[0][i] == square[2][i])
 			return false;
-	}
 
-	//check win for cross
-	if (square[0][0] == square[1][1] && square[1][1] == square[2][2] || square[0][2] == square[1][1] && square[1][1] == square[2][0])
+	//checking the win for cross
+
+	if (square[0][0] == square[1][1] && square[0][0] == square[2][2] || 
+		square[0][2] == square[1][1] && square[0][2] == square[2][0])
 		return false;
 
-	//check game is in continue or not
-	for (int i = 0; i < 3; i++)
-		for (int j = 0; j < i; j++)
-			if (square[i][j] != 'X' && square[i][j] != 'O') return true;
-	
-	//check draw
+	//Checking the game is in continue mode or not
+	for (int i = 0; i<3; i++)
+		for (int j = 0; j<3; j++)
+			if (square[i][j] != 'X' && square[i][j] != 'O')
+				return true;
+
+	//Checking the if game already draw
 	draw = true;
 	return false;
 }
@@ -61,43 +63,45 @@ void mark()
 {
 	if (player == 1)
 	{
-		cout << "Your turn (X): "; cin >> choice;
+		cout << "Your turn (X): ";
 	}
 	else 
 	{
-		cout << "Your turn (O): "; cin >> choice;
+		cout << "Your turn (O): ";
 	}
+	cin >> choice;
 	switch (choice)
 	{
 	case 11: row = 0; column = 0; break;
-	case 12: row = 1; column = 1; break;
-	case 13: row = 2; column = 2; break;
-	case 21: row = 0; column = 0; break;
+	case 12: row = 0; column = 1; break;
+	case 13: row = 0; column = 2; break;
+	case 21: row = 1; column = 0; break;
 	case 22: row = 1; column = 1; break;
-	case 23: row = 2; column = 2; break;
-	case 31: row = 0; column = 0; break;
-	case 32: row = 1; column = 1; break;
+	case 23: row = 1; column = 2; break;
+	case 31: row = 2; column = 0; break;
+	case 32: row = 2; column = 1; break;
 	case 33: row = 2; column = 2; break;
 	default:
 		cout << "Invalid move!!!";
 		break;
 	}
-	if (player == 1 && square[row][column] != 'X' && square[row][column] != 'O')
-	{
+	if (player == 1 && square[row][column] != 'X' && square[row][column] != 'O') {
+		//updating the position for 'X' symbol if
+		//it is not already occupied
 		square[row][column] = 'X';
 		player = 2;
 	}
-	else
-		if (player ==2 && square[row][column] != 'X' && square[row][column] != 'O')
-		{
-			square[row][column] = 'O';
-			player = 2;
-		}
-		else
-		{
-			cout << "Square already filled\n Please choose other one!!!\n";
-			mark();
-		}
+	else if (player == 2 && square[row][column] != 'X' && square[row][column] != 'O') {
+		//updating the position for 'O' symbol if
+		//it is not already occupied
+		square[row][column] = 'O';
+		player = 1;
+	}
+	else {
+		//if input position already filled
+		cout << "Box already filled!\n Please choose another!!\n\n";
+		mark();
+	}
 	display();
 }
 int main()
@@ -108,14 +112,17 @@ int main()
 	if (choose != 1) exit(0);
 	cout << "Enter player 1 name: "; cin >> name1;
 	cout << "Enter player 2 name: "; cin >> name2;
-	while (gameOver())
+	while (!gameOver())
 	{
 		display();
-		mark;
+		mark();
 		gameOver();
 	}
 	if (player == 1 && draw == false)
+	{
+		display();
 		cout << "\n The WINNER is " << name1 << "\n Congraturation";
+	}
 	else
 		if (player == 2 && draw == false)
 			cout << "\n The WINNER is " << name2 << "\n Congraturation";

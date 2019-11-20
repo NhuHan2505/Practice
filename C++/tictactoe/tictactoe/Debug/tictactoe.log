@@ -1,7 +1,6 @@
 ﻿  tictactoe.cpp
-d:\devtool\practice\c++\tictactoe\tictactoe\tictactoe.cpp(12): warning C4838: conversion from 'int' to 'char' requires a narrowing conversion
-d:\devtool\practice\c++\tictactoe\tictactoe\tictactoe.cpp(12): warning C4305: 'initializing': truncation from 'int' to 'char'
-d:\devtool\practice\c++\tictactoe\tictactoe\tictactoe.cpp(12): warning C4309: 'initializing': truncation of constant value
-d:\devtool\practice\c++\tictactoe\tictactoe\tictactoe.cpp(112): warning C4551: function call missing argument list
+d:\devtool\practice\c++\tictactoe\tictactoe\tictactoe.cpp(13): warning C4838: conversion from 'int' to 'char' requires a narrowing conversion
+d:\devtool\practice\c++\tictactoe\tictactoe\tictactoe.cpp(13): warning C4305: 'initializing': truncation from 'int' to 'char'
+d:\devtool\practice\c++\tictactoe\tictactoe\tictactoe.cpp(13): warning C4309: 'initializing': truncation of constant value
   tictactoe.vcxproj -> D:\DevTool\Practice\C++\tictactoe\Debug\tictactoe.exe
   tictactoe.vcxproj -> D:\DevTool\Practice\C++\tictactoe\Debug\tictactoe.pdb (Full PDB)

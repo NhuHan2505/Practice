@@ -1,0 +1,21 @@
+Why should we use delete?
+To avoid wastage of memory, you can dynamically allocate memory required during runtime using new and delete operator in C++.
+
+When we use delete?
+As soon as you create a dynamic object, this calling the new operator, you need to call delete somewhere.
+
+Difference between delete and delete[]
+The delete operator deallocates memory and calls the destructor for a single object created with new.
+
+The delete [] operator deallocates memory and calls destructors for an array of objects created with new [].
+
+Write a demo
+int main()
+{
+	//for a single object
+	int *a=new int();
+	delete a;
+	//for an array of object
+	int (*b)[]= new int();
+	delete []b;
+}

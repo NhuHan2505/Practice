@@ -1,0 +1,17 @@
+short a[] = {5, 10, 15, 20, 25, 30}
+short *p = a;
+
+a = 0x00affb84 //địa chỉ của a
+&a = 0x00affb84 //địa chỉ của a 
+*a = 5 //là giá trị của địa chỉ a mà địa chỉ a là địa chỉ phần tử đầu tiên của mảng a
+p = 0x00affb84 //địa chỉ của a  
+&p = 0x00affb78 //địa chỉ của p 
+*p = 5 //giá trị mà địa chỉ của p trỏ tới mà địa chỉ p trỏ tới là phần tử đầu tiên của mảng a
+p + 1 = 0x00affb86 //trỏ tới vị trí tiếp theo trên bộ nhớ 
+mà khoảng cách của 2 địa chỉ này bằng đúng kích thước của kiểu dữ liệu được khai báo cho con trỏ
+(*p) + 1 = 6 //cộng thêm 1 cho giá trị của p đang trỏ tới
+*(p+1) = 10 //trỏ tới giá trị tiếp theo trên mảng
+&p + 1 = ?
+&a + 1 = ?
+a++; a =?
+p++; p =?

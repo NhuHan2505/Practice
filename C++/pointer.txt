@@ -1,4 +1,4 @@
-﻿// pointer.cpp : Defines the entry point for the console application.
+// pointer.cpp : Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
@@ -38,8 +38,7 @@ int main()
 	//*ptr_c là địa chỉ của biến ptr_a
 	//**ptr_c là giá trị của biến con trỏ ptr_c trỏ tới
 	
-	delete ptr_a; //giải phóng con trỏ ptr_a đã cấp phát ở trên 
-	//sau khi dùng hàm delete thì con trỏ vẫn giữ giá trị là địa chỉ mà nó new
+	delete ptr_a;
 	ptr_a = NULL;
 	system("pause");
     return 0;

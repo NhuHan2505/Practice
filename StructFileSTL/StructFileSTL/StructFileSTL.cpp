@@ -3,43 +3,65 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <algorithm>
 #include <string>
 #include <vector>
 using namespace std;
 
-
+int choose;
 struct Student
 {
 	int id;
 	string name;
 	float score;
+
 };
-void inputStudent(Student std)
+vector <Student*> s;
+void inputStudent(Student *stu)
 {
-	cout << "Input Student's ID: ";
-	cin >> std.id;
+
+		cout << "Input Student's ID: ";
+		cin >> stu->id;
+	cin.ignore();
 	cout << "Input Student's Name: ";
-	cin >> std.name;
+	getline(cin, stu->name);
+
 	do
 	{
 		cout << "Input Student's Score (must be in range 0-10): ";
-		cin >> std.score;
-	} while (std.score < 0 || std.score>10);
+		cin >> stu->score;
+	} while (stu->score < 0 || stu->score>10);
+	
+	s.push_back(stu);
 }
 
-void outputStudent(Student std)
+void outputStudent(Student *stu)
 {
-	cout << "ID: " << std.id << "\t" << "Name: " << std.name << "\t" << "Score: " << std.score << endl;
+	cout << stu->id << "\t" << stu->name << "\t\t" << stu->score << endl;
 }
-void showVector(vector <Student> std)
+
+void showVector ()
 {
-	for (int i = 0; i < std.size(); i++) outputStudent(std[i]);
+	cout << "ID\tFULLNAME\t\tSCORE" << endl;
+	for (int i = 0; i < s.size(); i++) outputStudent(s[i]);
+}
+void display()
+{
+	cout << "------------------MENU------------------" << endl;
+	cout << "1. Input \n2.Display \n3. Save to file \n4. Load from file \n0. Exit \n";
+	cout << "----------------------------------------" << endl;
+	cout << "Choose: ";
+	cin >> choose;
 }
 int main()
 {
-	vector <Student> std;
+	//display();
 	Student a;
-	inputStudent(a);
+	for (int i=0; i<3; i++)
+		inputStudent(&a);
+	//outputStudent(&a);
+	showVector();
+	system("pause");
     return 0;
 }
 

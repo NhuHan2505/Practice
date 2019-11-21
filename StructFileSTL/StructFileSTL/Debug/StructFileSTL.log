@@ -1,5 +1,4 @@
-﻿  stdafx.cpp
-  StructFileSTL.cpp
-d:\devtool\practice\practice\structfilestl\structfilestl\structfilestl.cpp(35): warning C4018: '<': signed/unsigned mismatch
+﻿  StructFileSTL.cpp
+d:\devtool\practice\practice\structfilestl\structfilestl\structfilestl.cpp(46): warning C4018: '<': signed/unsigned mismatch
   StructFileSTL.vcxproj -> D:\DevTool\Practice\Practice\StructFileSTL\Debug\StructFileSTL.exe
   StructFileSTL.vcxproj -> D:\DevTool\Practice\Practice\StructFileSTL\Debug\StructFileSTL.pdb (Full PDB)

@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+void main()
+{
+	int a[4] = {1, 2, 3, 4};
+	int *p = a;
+	int *p2 = new int;
+
+	delete p; //giải phóng con trỏ p
+	delete a; //giải phóng mảng nên cần phải thêm dấu [] --> delete []a
+	delete p2; //giải phóng con trỏ p2
+}

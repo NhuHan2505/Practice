@@ -2,13 +2,11 @@
 //
 
 #include "stdafx.h"
-#include "MyPoint.h"
 
 
 int main()
 {
-	MyPoint* p = new MyPoint(3, 4);
-	p->Display();
+	MyPoint *p=new MyPoint(1,2);
 	cout << p->Distance(MyPoint(0, 0)) << endl;
 	system("pause");
 	return 0;

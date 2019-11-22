@@ -1,4 +1,3 @@
 ﻿  StructFileSTL.cpp
-d:\devtool\practice\practice\structfilestl\structfilestl\structfilestl.cpp(46): warning C4018: '<': signed/unsigned mismatch
-  StructFileSTL.vcxproj -> D:\DevTool\Practice\Practice\StructFileSTL\Debug\StructFileSTL.exe
-  StructFileSTL.vcxproj -> D:\DevTool\Practice\Practice\StructFileSTL\Debug\StructFileSTL.pdb (Full PDB)
+d:\devtool\practice\practice\structfilestl\structfilestl\structfilestl.cpp(47): warning C4018: '<': signed/unsigned mismatch
+d:\devtool\practice\practice\structfilestl\structfilestl\structfilestl.cpp(58): error C4700: uninitialized local variable 'stu' used

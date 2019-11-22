@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <string>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 int choose;
@@ -20,8 +21,8 @@ vector <Student*> s;
 void inputStudent(Student *stu)
 {
 
-		cout << "Input Student's ID: ";
-		cin >> stu->id;
+	cout << "Input Student's ID: ";
+	cin >> stu->id;
 	cin.ignore();
 	cout << "Input Student's Name: ";
 	getline(cin, stu->name);
@@ -45,13 +46,33 @@ void showVector ()
 	cout << "ID\tFULLNAME\t\tSCORE" << endl;
 	for (int i = 0; i < s.size(); i++) outputStudent(s[i]);
 }
+void loadFile(string path)
+{
+	fstream f;
+	f.open(path, ios::in);
+	if (f.fail())
+		cout << "Failed to open this file" << endl;
+	Student *stu;
+	while (!f.eof())
+	{
+		f >> stu->id;
+		//f.getline(stu->name);
+		f >> stu->score;
+	}
+	f.close();
+}
+void saveFile(string path)
+{
+	fstream f;
+	f.open(path, ios::out);
+
+}
 void display()
 {
 	cout << "------------------MENU------------------" << endl;
 	cout << "1. Input \n2.Display \n3. Save to file \n4. Load from file \n0. Exit \n";
 	cout << "----------------------------------------" << endl;
 	cout << "Choose: ";
-	cin >> choose;
 }
 int main()
 {

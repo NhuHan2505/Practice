@@ -10,7 +10,11 @@
 #include <stdio.h>
 #include <tchar.h>
 #include <iostream>
+#include <list>
+#include <fstream>
 #include "MyPoint.h"
+#include "Virus.h"
+#include "FluVirus.h"
 
 using namespace std;
 

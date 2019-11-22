@@ -12,7 +12,7 @@ public:
 	void Setm_dna(char* dna);
 	int Getm_resistance();
 	void Setm_resistance(int resistance);
-	//void LoadDNAInformation();
+	void LoadDNAInformation();
 	//void ReduceResistance(int medical_resistance);
 	virtual void DoBorn() = 0;
 	virtual MyPoint DoClone() = 0;

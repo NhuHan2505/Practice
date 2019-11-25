@@ -13,7 +13,7 @@ public:
 	int Getm_resistance();
 	void Setm_resistance(int resistance);
 	void LoadDNAInformation();
-	//void ReduceResistance(int medical_resistance);
+	int ReduceResistance(int medical_resistance);
 	virtual void DoBorn() = 0;
 	virtual void DoClone() = 0;
 	virtual void DoDie() = 0;

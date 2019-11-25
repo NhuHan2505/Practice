@@ -4,11 +4,14 @@
 
 Virus::Virus()
 {
+	this->Setm_dna("");
+	this->Setm_resistance(0);
 }
 
 
 Virus::~Virus()
 {
+	cout << "Virus is died" << endl;
 }
 
 Virus::Virus(char * dna, int resistance)
@@ -54,4 +57,12 @@ void Virus::LoadDNAInformation()
 		cout << endl;
 		f.close();
 	}
+}
+
+int Virus::ReduceResistance(int medical_resistance)
+{
+	m_resistance -= medical_resistance;
+	if (m_resistance <= 0) 
+		return m_resistance = 0;
+	else return m_resistance;
 }

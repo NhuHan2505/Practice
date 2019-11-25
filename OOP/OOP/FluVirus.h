@@ -6,8 +6,11 @@ private:
 public:
 	FluVirus();
 	~FluVirus();
+	FluVirus(int color);
+	void Setm_color(int color);
+	int Getm_color();
 	void DoBorn();
-	MyPoint DoClone();
+	void DoClone();
 	void DoDie();
 	void InitResistance();
 };

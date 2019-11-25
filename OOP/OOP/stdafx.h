@@ -15,6 +15,7 @@
 #include "MyPoint.h"
 #include "Virus.h"
 #include "FluVirus.h"
+#include "DengueVirus.h"
 
 using namespace std;
 

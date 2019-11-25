@@ -10,7 +10,8 @@ public:
 	~Patient();
 	int InitResistance();
 	void DoStart();
-	void TakeMedicine();
+	void TakeMedicine(int x);
+	void DoDie();
 	int GetState();
 };
 

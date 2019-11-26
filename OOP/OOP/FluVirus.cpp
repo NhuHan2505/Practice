@@ -18,6 +18,13 @@ FluVirus::FluVirus(int color)
 	this->Setm_color(color);
 }
 
+FluVirus::FluVirus(FluVirus * v)
+{
+	v->Setm_dna(this->Getm_dna());
+	v->Setm_resistance(this->Getm_resistance());
+	v->Setm_color(this->Getm_color());
+}
+
 void FluVirus::Setm_color(int color)
 {
 	this->m_color = color;
@@ -31,17 +38,19 @@ int FluVirus::Getm_color()
 void FluVirus::DoBorn()
 {
 	LoadDNAInformation();
+	//srand((int)time(0));
 	this->m_color = rand() % 2;
 	cout << this->m_color << endl;
 }
 
-void FluVirus::DoClone()
+list<Virus*> FluVirus::DoClone()
 {
-	FluVirus *v = new FluVirus();
-	v->Setm_dna(this->Getm_dna);
-	v->Setm_resistance(this->Getm_resistance);
-	v->Setm_color(this->Getm_color);
+	list<Virus*> virusList;
+	virusList.push_back(new FluVirus(*this));
+	return list<Virus*>();
 }
+
+
 
 void FluVirus::DoDie()
 {
@@ -52,6 +61,7 @@ void FluVirus::DoDie()
 
 void FluVirus::InitResistance()
 {
+	//srand((int)time(0));
 	if (this->m_color == 1)
 		Setm_resistance(rand() % (20 - 10 + 1) + 10);
 	else

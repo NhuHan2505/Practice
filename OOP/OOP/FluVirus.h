@@ -1,4 +1,5 @@
 #pragma once
+#include "Virus.h"
 class FluVirus:public Virus
 {
 private:
@@ -7,10 +8,11 @@ public:
 	FluVirus();
 	~FluVirus();
 	FluVirus(int color);
+	FluVirus(FluVirus *v);
 	void Setm_color(int color);
 	int Getm_color();
 	void DoBorn();
-	void DoClone();
+	list<Virus*> DoClone();
 	void DoDie();
 	void InitResistance();
 };

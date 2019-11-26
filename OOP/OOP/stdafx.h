@@ -12,10 +12,7 @@
 #include <iostream>
 #include <list>
 #include <fstream>
-#include "MyPoint.h"
-#include "Virus.h"
-#include "FluVirus.h"
-#include "DengueVirus.h"
+#include <time.h>
 
 using namespace std;
 

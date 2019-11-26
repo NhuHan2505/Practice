@@ -2,17 +2,28 @@
 //
 
 #include "stdafx.h"
+#include <vld.h>
+#include "Patient.h"
+
 
 
 int main()
 {
-	//MyPoint *p=new MyPoint(1,2);
-	//cout << p->Distance(MyPoint(0, 0)) << endl;
-	//Virus v;
-	//v.LoadDNAInformation();
-	Virus *v = new FluVirus();
-	v->DoBorn();
-	v->InitResistance();
+	Patient p;
+	int t = 0;
+	p.DoStart();
+	while (p.GetState() == 1)
+	{
+		cout << "Take Medicine (0 = NO, 1 = YES)" << endl;
+		cin >> t;
+		if (t == 1)
+		{
+			int min = 1;
+			int max = 60;
+			int medicine_resistance = min + (rand() % (int)(max - min + 1));
+			p.TakeMedicine(medicine_resistance);
+		}
+	}
 	system("pause");
 	return 0;
 }

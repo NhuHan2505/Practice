@@ -1,4 +1,5 @@
 #pragma once
+#include "Virus.h"
 class DengueVirus:public Virus
 {
 private:
@@ -6,8 +7,11 @@ private:
 public:
 	DengueVirus();
 	~DengueVirus();
+	DengueVirus(DengueVirus *v);
+	void Setm_protein(char protein[4]);
+	char* Getm_protein();
 	void DoBorn();
-	void DoClone();
+	list<Virus*> DoClone();
 	void DoDie();
 	void InitResistance();
 };

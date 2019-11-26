@@ -20,6 +20,13 @@ Virus::Virus(char * dna, int resistance)
 	Setm_resistance(resistance);
 }
 
+Virus::Virus(Virus * v)
+{
+	v->Setm_dna(this->Getm_dna());
+	v->Setm_resistance(this->Getm_resistance());
+	delete v;
+}
+
 char * Virus::Getm_dna()
 {
 	return this->m_dna;
@@ -28,6 +35,7 @@ char * Virus::Getm_dna()
 void Virus::Setm_dna(char * dna)
 {
 	this->m_dna = dna;
+	//delete dna;
 }
 
 int Virus::Getm_resistance()
@@ -61,8 +69,7 @@ void Virus::LoadDNAInformation()
 
 int Virus::ReduceResistance(int medical_resistance)
 {
-	m_resistance -= medical_resistance;
 	if (m_resistance <= 0) 
 		return m_resistance = 0;
-	else return m_resistance;
+	else return m_resistance-=medical_resistance;
 }

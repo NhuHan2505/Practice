@@ -1,4 +1,7 @@
 #pragma once
+#include "Virus.h"
+#include "FluVirus.h"
+#include "DengueVirus.h"
 class Patient
 {
 private:

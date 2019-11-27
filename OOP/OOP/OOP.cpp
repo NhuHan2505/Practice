@@ -11,7 +11,7 @@ int main()
 {
 	Patient p;
 	int t = 0;
-	p.DoStart();
+	//p.DoStart();
 	while (p.GetState() == 1)
 	{
 		cout << "Take Medicine (0 = NO, 1 = YES)" << endl;
@@ -20,7 +20,9 @@ int main()
 		{
 			int min = 1;
 			int max = 60;
+			srand((int)time(0));
 			int medicine_resistance = min + (rand() % (int)(max - min + 1));
+			cout << medicine_resistance << endl;
 			p.TakeMedicine(medicine_resistance);
 		}
 	}

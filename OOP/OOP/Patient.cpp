@@ -6,6 +6,7 @@ Patient::Patient()
 {
 	m_resistance = 1000 + rand() % 8001;
 	m_state = 1;
+	DoStart();
 }
 
 
@@ -21,7 +22,7 @@ int Patient::InitResistance()
 
 void Patient::DoStart()
 {
-	//srand((int)time(0));
+	srand((int)time(0));
 	int x = 10 + rand() % 11;
 	for (int i = 0; i < x; i++)
 	{
@@ -37,7 +38,6 @@ void Patient::DoStart()
 			v->DoBorn();
 			m_virusList.push_back(v);
 		}
-
 	}
 	m_state = 1;
 }
@@ -49,13 +49,15 @@ void Patient::TakeMedicine(int medicine)
 	{
 		if ((*it)->ReduceResistance(medicine) <= 0)
 		{
-			cout << (*it)->ReduceResistance(medicine) << endl;
-			(*it)->DoDie();
+			//cout << (*it)->ReduceResistance(medicine) << endl;
+			//(*it)->DoDie();
+			delete (*it);
 			it=m_virusList.erase(it);
 		}
 		else
 		{
-			list<Virus*> virusList = (*it)->DoClone();
+			list<Virus*> virusList ;
+			virusList = (*it)->DoClone();
 			int x = virusList.size();
 			cout << x << endl;
 			while (x > 0)
@@ -69,8 +71,10 @@ void Patient::TakeMedicine(int medicine)
 			{
 				this->DoDie();
 			}
+			
 		}
 	}
+	
 	if (m_state = 0)
 		cout << "DIE!!!" << endl;
 	else

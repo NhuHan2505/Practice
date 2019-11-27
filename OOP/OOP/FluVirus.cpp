@@ -38,7 +38,7 @@ int FluVirus::Getm_color()
 void FluVirus::DoBorn()
 {
 	LoadDNAInformation();
-	//srand((int)time(0));
+	srand((int)time(0));
 	this->m_color = rand() % 2;
 	cout << this->m_color << endl;
 }

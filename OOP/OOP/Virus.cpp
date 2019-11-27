@@ -35,7 +35,6 @@ char * Virus::Getm_dna()
 void Virus::Setm_dna(char * dna)
 {
 	this->m_dna = dna;
-	//delete dna;
 }
 
 int Virus::Getm_resistance()
@@ -62,6 +61,7 @@ void Virus::LoadDNAInformation()
 			m_dna = t;
 			cout << *m_dna;
 		}
+		delete t;
 		cout << endl;
 		f.close();
 	}

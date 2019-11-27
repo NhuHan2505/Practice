@@ -18,10 +18,7 @@ DengueVirus::DengueVirus(DengueVirus * v)
 {
 	v->Setm_dna(this->Getm_dna());
 	v->Setm_resistance(this->Getm_resistance());
-	for (int i = 0; i < 4; i++)
-	{
-		v->Setm_protein(this->Getm_protein());
-	}
+	v->Setm_protein(this->Getm_protein());
 }
 
 void DengueVirus::Setm_protein(char protein[4])

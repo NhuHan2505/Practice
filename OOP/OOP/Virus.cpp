@@ -61,7 +61,7 @@ void Virus::LoadDNAInformation()
 			m_dna = t;
 			cout << *m_dna;
 		}
-		delete t;
+		delete t; //fix leak
 		cout << endl;
 		f.close();
 	}

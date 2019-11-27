@@ -2,7 +2,7 @@
 #include "DengueVirus.h"
 
 
-DengueVirus::DengueVirus()
+DengueVirus::DengueVirus(): Virus()
 {
 	for (int i = 0; i < 4; i++)
 		m_protein[i] = ' ';
@@ -12,6 +12,11 @@ DengueVirus::DengueVirus()
 DengueVirus::~DengueVirus()
 {
 	cout << "Dengue Virus is died" << endl;
+}
+
+DengueVirus::DengueVirus(char protein[4])
+{
+	this->Setm_protein(protein);
 }
 
 DengueVirus::DengueVirus(DengueVirus * v)

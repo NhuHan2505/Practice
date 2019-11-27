@@ -51,7 +51,7 @@ void Patient::TakeMedicine(int medicine)
 		{
 			//cout << (*it)->ReduceResistance(medicine) << endl;
 			//(*it)->DoDie();
-			delete (*it);
+			delete (*it); //fix leak
 			it=m_virusList.erase(it);
 		}
 		else
@@ -59,7 +59,7 @@ void Patient::TakeMedicine(int medicine)
 			list<Virus*> virusList ;
 			virusList = (*it)->DoClone();
 			int x = virusList.size();
-			cout << x << endl;
+			//cout << x << endl;
 			while (x > 0)
 			{
 				m_virusList.push_back(virusList.back());
@@ -70,16 +70,23 @@ void Patient::TakeMedicine(int medicine)
 			if (this->m_resistance <= 0)
 			{
 				this->DoDie();
-			}
-			
+				//cout << "Patient die" << endl;
+				//break;
+			}	
 		}
 	}
-	
 	if (m_state = 0)
+	{
 		cout << "DIE!!!" << endl;
+		list<Virus*> ::iterator it;
+		for (it = m_virusList.begin(); it != m_virusList.end(); it++)
+		{
+			delete *it;
+		}
+	}
 	else
 	{
-		cout << "LIVE!!!" << endl;
+		cout << "ALIVE!!!" << endl;
 	}
 }
 

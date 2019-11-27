@@ -2,7 +2,7 @@
 #include "FluVirus.h"
 
 
-FluVirus::FluVirus()
+FluVirus::FluVirus(): Virus()
 {
 	this->Setm_color(0);
 }
@@ -13,7 +13,7 @@ FluVirus::~FluVirus()
 	cout << "FluVirus is died" << endl;
 }
 
-FluVirus::FluVirus(int color)
+FluVirus::FluVirus(int color): Virus()
 {
 	this->Setm_color(color);
 }
@@ -38,7 +38,7 @@ int FluVirus::Getm_color()
 void FluVirus::DoBorn()
 {
 	LoadDNAInformation();
-	srand((int)time(0));
+	//srand((int)time(0));
 	this->m_color = rand() % 2;
 	cout << this->m_color << endl;
 }
@@ -61,7 +61,7 @@ void FluVirus::DoDie()
 
 void FluVirus::InitResistance()
 {
-	//srand((int)time(0));
+	srand((int)time(0));
 	if (this->m_color == 1)
 		Setm_resistance(rand() % (20 - 10 + 1) + 10);
 	else

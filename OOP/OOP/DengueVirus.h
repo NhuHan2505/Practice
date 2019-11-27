@@ -7,6 +7,7 @@ private:
 public:
 	DengueVirus();
 	~DengueVirus();
+	DengueVirus(char protein[4]);
 	DengueVirus(DengueVirus *v);
 	void Setm_protein(char protein[4]);
 	char* Getm_protein();

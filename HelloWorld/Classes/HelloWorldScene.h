@@ -26,6 +26,8 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "ui\CocosGUI.h"
+using namespace cocos2d;
 
 class HelloWorld : public cocos2d::Scene
 {
@@ -36,7 +38,10 @@ public:
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
-    
+
+	void onKeyPress(EventKeyboard::KeyCode keyCode, Event* event);
+
+
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 };

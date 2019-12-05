@@ -8,9 +8,6 @@ Rock::Rock(Scene * scene)
 	scene->addChild(rock);
 }
 
-Rock::~Rock()
-{
-}
 
 void Rock::Init()
 {

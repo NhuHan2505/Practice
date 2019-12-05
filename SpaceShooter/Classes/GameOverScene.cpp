@@ -29,7 +29,10 @@ bool GameOverScene::init()
 	Vector <MenuItem*> menuItem;
 	menuItem.pushBack(itemResume);
 	menuItem.pushBack(itemHome);
-	
+	auto menu = Menu::createWithArray(menuItem);
+	menu->setAnchorPoint(Vec2(0, 0));
+	menu->setPosition(150, 150);
+	this->addChild(menu);
 	return true;
 }
 

@@ -8,7 +8,7 @@ USING_NS_CC;
 
 class ResourceManager
 {
-/*private:
+private:
 	static ResourceManager* s_Instance;
 	string mdataFolderPath;
 	map<char, Sprite*> m_sprite;
@@ -22,6 +22,6 @@ public:
 	void Load(string fileName);
 	Sprite* GetSpriteById(char id);
 	//Button* GetButtonById(char id);
-	Label* GetLabelById(char id);*/
+	Label* GetLabelById(char id);
 };
 
